@@ -5,8 +5,6 @@ import { JsonGetter } from './JsonGetter.js';
 // index.html ファイルをコピーする
 require('file-loader?name=../../dist/[name].[ext]!../index.html');
 
-//$(() => {
-
 document.querySelector('#btnGetData').addEventListener('click', () => {
 
   const loadingArea = $('#loadingArea');
@@ -21,15 +19,15 @@ document.querySelector('#btnGetData').addEventListener('click', () => {
 
     $('#resultJson').text(JSON.stringify(response.data, null, "\t"));
     new Morris.Bar({
-        element: 'mygraph'
-      , data: response.data
-      , xkey: 'name'
-      , ykeys: ['value']
-      , xLabels: "年"
-      , labels: ['値']
-      , postUnits: response.unit
-      , gridLineColor: '#000000'
-      , hideHover: 'auto'
+      element: 'mygraph',
+      data: response.data,
+      xkey: 'name',
+      ykeys: ['value'],
+      xLabels: "年",
+      labels: ['値'],
+      postUnits: response.unit,
+      gridLineColor: '#000000',
+      hideHover: 'auto'
     });
   }, (error) => {
     console.error("Failed!", error);
@@ -38,11 +36,8 @@ document.querySelector('#btnGetData').addEventListener('click', () => {
 
 document.querySelector('#btnClearData').addEventListener('click', () => {
 
-  //console.log('Clear!');
   $('#resultArea').addClass('hidden');
   $('#resultJson').text('');
   $('#mygraph').text('');
 
 });
-
-//});

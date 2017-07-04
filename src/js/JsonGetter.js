@@ -1,4 +1,7 @@
 /* global $ */
+
+import { fixedEncodeURIComponent } from './libs.js';
+
 class JsonGetter {
 
   //constructor() {
@@ -17,7 +20,7 @@ class JsonGetter {
     //コード
     const cdCat01 ="#A03503";
 
-    return `${API_URL}?appId=${escape(APP_ID)}&statsDataId=${escape(statsDataId)}&cdCat01=${escape(cdCat01)}`;
+    return `${API_URL}?appId=${fixedEncodeURIComponent(APP_ID)}&statsDataId=${fixedEncodeURIComponent(statsDataId)}&cdCat01=${fixedEncodeURIComponent(cdCat01)}`;
   }
 
   getJson() {
