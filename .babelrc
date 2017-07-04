@@ -1,0 +1,7 @@
+{
+    "presets": [ "env" ],
+    "compact": false,
+    "plugins": [
+        "babel-plugin-espower"
+    ]
+}

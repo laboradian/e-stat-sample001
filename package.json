@@ -1,0 +1,46 @@
+{
+  "name": "e-stat-sample001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --colors --require babel-register test/main.js || exit 0",
+    "watch": "webpack -d --watch --colors || exit 0",
+    "server": "browser-sync start --server dist --serverStatic dist --files dist/* || exit 0",
+    "build": "webpack -p --progress --colors || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laboradian/e-stat-sample001.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laboradian/e-stat-sample001/issues"
+  },
+  "homepage": "https://github.com/laboradian/e-stat-sample001#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-espower": "^2.3.2",
+    "babel-preset-env": "^1.5.2",
+    "bootstrap-sass": "^3.3.7",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.1.1",
+    "eslint-loader": "^1.8.0",
+    "extract-text-webpack-plugin": "^3.0.0-beta.3",
+    "file-loader": "^0.11.2",
+    "mocha": "^3.4.2",
+    "mocha-loader": "^1.1.1",
+    "node-sass": "^4.5.3",
+    "power-assert": "^1.4.4",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
