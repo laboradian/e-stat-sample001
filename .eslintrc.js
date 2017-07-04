@@ -13,7 +13,7 @@ module.exports = {
         ],
         "no-console": "off",
         "arrow-parens": ["warn", "always"],
-        "arrow-body-style": "warn",
+        "arrow-body-style": ["warn", "always"],
         "arrow-parens": "warn",
         "arrow-spacing": "warn",
         "generator-star-spacing": "warn",

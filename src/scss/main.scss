@@ -1,2 +1,14 @@
 @import './bootstrap-variables';
 @import './bootstrap-custom';
+
+body {
+  padding: 20px;
+}
+
+.result {
+  margin-top: 30px;
+}
+
+#loadingArea {
+  margin: 10px;
+}

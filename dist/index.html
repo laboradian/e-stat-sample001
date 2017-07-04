@@ -5,6 +5,7 @@
   <!--  Font Awesome の CDN  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
   <link rel="stylesheet" href="css/main.css">
   <title>e-Stat を使ったページのサンプル001</title>
 </head>
@@ -14,7 +15,25 @@
     <h1>e-Stat を使ったページのサンプル001</h1>
   </header>
 
+  <div class="well">
+    「<a href="http://www.e-stat.go.jp/api/how_to_use/">APIの使い方 | 政府統計の総合窓口(e-Stat)−API機能</a>」を試す。
+  </div>
 
+  <button id="btnGetData" type="button" class="btn btn-primary">データを取得する</button>
+  <button id="btnClearData" type="button" class="btn btn-danger">クリア</button>
+
+  <section id="loadingArea" class="hidden">
+    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+  </section>
+
+  <section id="resultArea" class="hidden">
+    <pre class="result"><code id="resultJson"></code></pre>
+    <div id="mygraph"></div>
+  </section>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>
