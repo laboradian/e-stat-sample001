@@ -13,6 +13,7 @@ class JsonGetter {
     const APP_ID = 'f1049ebf163b7e7aa48dc2d12d33903825890b4d';
 
     // API URL
+    // ここでは、「統計データ取得」API を利用する
     // http://api.e-stat.go.jp/rest/2.0/app/getStatsData?appId=<アプリケーションID>&statsDataId=C0020050213000&cdCat01=%23A03503
     const API_URL = "http://api.e-stat.go.jp/rest/2.0/app/json/getStatsData";
     // 統計表ID
@@ -36,8 +37,10 @@ class JsonGetter {
       $.getJSON(url/*, function(jsonData){}*/)
       .done((jsonData) => {
         //const statusCode = jsonData['GET_STATS_DATA']['RESULT']['STATUS'];
-        //console.log('jsonData', jsonData);
+        console.log('jsonData', jsonData);
         //console.log('statusCode', statusCode);
+
+        //reject(new Error('エラーのテストです！'));
 
         // 統計データの数値情報を抽出します
         // Javascriptのfilterを使って、jsonデータからデータを抽出します
@@ -78,7 +81,7 @@ class JsonGetter {
           });
         }
 
-        resolve({ data:graphData, unit:Unit });
+        resolve({ originalData:jsonData, data:graphData, unit:Unit });
       })
       .fail((jqxhr, textStatus, error) => {
         reject(new Error(error));

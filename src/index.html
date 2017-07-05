@@ -27,8 +27,19 @@
   </section>
 
   <section id="resultArea" class="hidden">
+    <h2>1. 取得したJSONデータ</h2>
+    <pre class="result"><code id="resultJsonOriginal"></code></pre>
+    <h2>2. 1からグラフに必要な値を抽出したJSONデータ</h2>
     <pre class="result"><code id="resultJson"></code></pre>
+    <h2>3. 2のデータを使ったグラフ</h2>
     <div id="mygraph"></div>
+  </section>
+
+  <div id="errMsg" class="alert alert-danger hidden" role="alert"></div>
+
+  <section id="eStatNotice">
+    <hr>
+    <small>「このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。」</small>
   </section>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>

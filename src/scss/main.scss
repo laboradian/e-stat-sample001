@@ -5,10 +5,24 @@ body {
   padding: 20px;
 }
 
-.result {
+#resultArea {
   margin-top: 30px;
+  h2 {
+    font-size: 1.2em;
+  }
+  .result {
+  }
 }
 
 #loadingArea {
   margin: 10px;
+}
+
+#errMsg {
+  margin-top: 30px;
+}
+
+#eStatNotice {
+  margin-top: 50px;
+  color: $gray-dark;
 }

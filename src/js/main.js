@@ -9,6 +9,7 @@ document.querySelector('#btnGetData').addEventListener('click', () => {
 
   const loadingArea = $('#loadingArea');
   const resultArea = $('#resultArea');
+  const errMsg = $('#errMsg');
 
   loadingArea.removeClass('hidden');
 
@@ -17,7 +18,9 @@ document.querySelector('#btnGetData').addEventListener('click', () => {
     resultArea.removeClass('hidden');
     loadingArea.addClass('hidden');
 
+    $('#resultJsonOriginal').text(JSON.stringify(response.originalData, null, "\t"));
     $('#resultJson').text(JSON.stringify(response.data, null, "\t"));
+
     new Morris.Bar({
       element: 'mygraph',
       data: response.data,
@@ -30,14 +33,19 @@ document.querySelector('#btnGetData').addEventListener('click', () => {
       hideHover: 'auto'
     });
   }, (error) => {
-    console.error("Failed!", error);
+
+    $('#loadingArea').addClass('hidden');
+    errMsg.text(`${error.name}: ${error.message}`).removeClass('hidden');
+
   });
 });
 
 document.querySelector('#btnClearData').addEventListener('click', () => {
 
+  $('#loadingArea').addClass('hidden');
   $('#resultArea').addClass('hidden');
   $('#resultJson').text('');
   $('#mygraph').text('');
+  $('#errMsg').addClass('hidden');
 
 });
