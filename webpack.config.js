@@ -67,11 +67,11 @@ module.exports = [
           }
         ]
       },
+      // Sassファイルの読み込みとコンパイル
       {
         test: /\.scss$/,
         exclude: /node_modules/,
         // ローダー名
-
         use: [
           MiniCssExtractPlugin.loader,
           // CSSをバンドルするための機能
